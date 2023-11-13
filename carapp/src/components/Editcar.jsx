@@ -41,7 +41,7 @@ const updateCar = () => {
 
     return(
         <>
-           <Button style={{margin:10}}variant="outlined" onClick={handleClickOpen}>
+           <Button onClick={handleClickOpen}>
         Edit
       </Button>
       <Dialog open={open} onClose={handleClose}>

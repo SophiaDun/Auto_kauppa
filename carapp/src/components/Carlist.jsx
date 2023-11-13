@@ -73,11 +73,11 @@ const Carlist = () => {
     fetchData();
   }, []);
   const columns = [
-    { headerName: 'Brand', field: 'brand', sortable: true, filter: true, floatingFilter: true  },
-    { headerName: 'Model', field: 'model' , sortable: true, filter: true, floatingFilter: true },
-    { headerName: 'Color', field: 'color' , sortable: true, filter: true, floatingFilter: true },
-    { headerName: 'Fuel', field: 'fuel', sortable: true, filter: true, floatingFilter: true  },
-    { headerName: 'Year', field: 'year' , sortable: true, filter: true, floatingFilter: true },
+    { headerName: 'Brand', field: 'brand', sortable: true, filter: true, floatingFilter: true,maxWidth: 180 },
+    { headerName: 'Model', field: 'model' , sortable: true, filter: true, floatingFilter: true,maxWidth: 150 },
+    { headerName: 'Color', field: 'color' , sortable: true, filter: true, floatingFilter: true,maxWidth: 150 },
+    { headerName: 'Fuel', field: 'fuel', sortable: true, filter: true, floatingFilter: true ,maxWidth: 150 },
+    { headerName: 'Year', field: 'year' , sortable: true, filter: true, floatingFilter: true,maxWidth: 150 },
     { headerName: 'Price', field: 'price', sortable: true, filter: true, floatingFilter: true  },
     {cellRenderer: params => <Editcar updateCar={updateCar} car={params.data} />
 
@@ -101,8 +101,8 @@ const Carlist = () => {
 
   return (
     <>
-        <Addcar saveCar={saveCar}/>
- <div className="ag-theme-alpine" style={{ height: '700px', width: '1200px', margin: 'auto' }}>
+        
+ <div className="ag-theme-alpine" style={{ height: '700px', width: '93em', margin: 'auto' }}>
 
         <AgGridReact
         
@@ -117,6 +117,7 @@ const Carlist = () => {
         autoHideDuration={3000}
         onClose={()=>setOpen(false)}
         message={msg}/>
+        <Addcar saveCar={saveCar}/>
       </div>
     </>
   );
